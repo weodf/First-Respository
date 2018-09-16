@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dayuan.provider.impl.mapper.ShowDayMapper">
+  <resultMap id="BaseResultMap" type="com.dayuan.provider.impl.entity.ShowDay">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="movie_id" jdbcType="INTEGER" property="movieId" />
+    <result column="show_day_col" jdbcType="VARCHAR" property="showDayCol" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, movie_id, show_day_col
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from show_day
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from show_day
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dayuan.provider.impl.entity.ShowDay">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into show_day (movie_id, show_day_col)
+    values (#{movieId,jdbcType=INTEGER}, #{showDayCol,jdbcType=VARCHAR})
+  </insert>
+
+
+  <!--根据showdayid-->
+  <select id="selectMovieIdByShowDId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from show_day where id=#{id}
+  </select>
+
+
+
+  <select id="listShowDays" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from show_day where movie_id=#{movieId}
+    order by show_day_col
+  </select>
+
+
+  <!--获得电影放映时间及日期-->
+  <!--select * FROM show_time as a,show_day as b WHERE a.id=1 AND a.show_day_id=b.id-->
+  <select id="selectPlaceAndDate"  resultType="java.util.Map">
+    select show_day_col,show_time_col,show_place from
+     show_time as a,show_day as b
+     WHERE a.id=#{id} and a.show_day_id=b.id
+  </select>
+
+</mapper>

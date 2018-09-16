@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/css/amazeui.min.css">
+    <link rel="stylesheet" href="/static/css/petshow.css?6">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/amazeui.min.js"></script>
+    <script src="/static/js/amazeui.lazyload.min.js"></script>
+</head>
+<div id="app">
+<body>
+<header class="am-topbar am-topbar-inverse">
+    <div class="amz-container">
+        <h1 class="am-topbar-brand">
+            <a href="#" class="am-topbar-logo">
+                <img src="/static/img/logo.png?1" alt="">
+            </a>
+        </h1>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+                data-am-collapse="{target: '#doc-topbar-collapse-5'}">
+            <span class="am-sr-only">
+                导航切换
+            </span>
+            <span class="am-icon-bars">
+            </span>
+        </button>
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse-5">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active">
+                    <a href="#">
+                        首页
+                    </a>
+                </li>
+                <li class="am-dropdown" data-am-dropdown="">
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;">
+                        发现萌宠
+                        <span class="am-icon-caret-down">
+                        </span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li>
+                            <a href="#">
+                                编辑推荐
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                人气排行
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                最新发布
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                语音涂鸦
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        萌宠趣闻
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        萌宠专题
+                    </a>
+                </li>
+                <li class="am-dropdown" data-am-dropdown="">
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;">
+                        萌宠服务
+                        <span class="am-icon-caret-down">
+                        </span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li>
+                            <a href="#">
+                                宠物医院
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                宠物美容
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                宠物店铺
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                更多服务
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="am_tuya">
+    <div class="am_tuya_user">
+        <div class="am_tuya_user_info">
+            <div class="am_tuya_user_info_name" v-text="movie.movieName"></div>
+            <div class="am_tuya_user_info_coordinate"><span class="am_tuya_user_info_time"></span></div>
+        </div>
+    </div>
+
+    <div class="am_tuya_content">
+        <div class="am_tuya_content_l">
+            <div class="am_albums">
+                <img :src="'/images/'+movie.picPath"  alt=""  width="80%" height="90%">
+            </div>
+
+            <div class="am_tuya_comment">
+                    <div class="am_tuya_comment_user">
+                        <div class="am_tuya_comment_user_l">演员表：</div>
+                    <div class="am_tuya_comment_text" v-text="movie.starring">
+                    </div>
+                    </div>
+                </div>
+
+                <div class="am_tuya_comment">
+                    <div class="am_tuya_comment_user">
+                        <div class="am_tuya_comment_user_l">简介：</div>
+                        <div class="am_tuya_comment_text" v-text="movie.desc"></div>
+                    </div>
+                </div>
+
+                <div class="am_tuya_comment">
+                    <div class="am_tuya_comment_user">
+                        <div class="am_tuya_comment_user_l">
+                            <!--<img src="/static/img/kj.png" alt=""><span></span>-->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="am_tuya_comment">
+                    <div class="am_tuya_comment_user">
+                        <div class="am_tuya_comment_user_l">
+                            <!--<img src="/static/img/kj.png" alt=""><span></span>-->
+                        </div>
+                        <!--<div class="am_tuya_comment_user_r">新疆维吾尔自治区 哈萨克自治州-->
+                        <!--</div>-->
+                        <!--<div class="am_tuya_comment_text">我来了！哈哈哈哈哈哈哈哈！</div>-->
+                    </div>
+                </div>
+            </div>
+            <!--<div class="am_news_load"><span><i  class="am-icon-spinner am-icon-spin"></i> 查看更多讨论</span></div>-->
+        </div>
+        <div class="am_tuya_content_r">
+            <ul class="am_tuya_r_info">
+                <i class="am-icon-heart"></i>导演:<span v-text="movie.director"></span>
+                <br>
+                <i class="am-icon-comments"></i>编剧:<span v-text="movie.writers"></span>
+                <br>
+                <i class="am-icon-eye"></i>类型:<span v-text="movie.type"></span>
+                <br>
+                <i class="am-icon-share-square-o"></i>电影长度:<span v-text="movie.filmLength"></span>
+                <br>
+                <i class="am-icon-clock-o"></i>发布时间及地点:<span v-text="movie.releaseDate"></span>
+                <br>
+                <i class="am-icon-clock-o"></i>制作国家:<span v-text="movie.producerCountries"></span>
+            </ul>
+            <br>
+            <br>
+            <ul class="am_tuya_tag">
+                <li><span class="am_tuya_tag_title">点击购票</span></li>
+                <li><button class="am_tuya_tag_title" type="button" @click="toBuyTicket(movie.id)"><span>购买</span></button>
+            </ul>
+
+            <span></span>
+            <!--<ul class="am_tuya_tag">-->
+                <!--<li><span></span><span v.text="movie.producerCountries"></span></li>-->
+            <!--</ul>-->
+
+        </div>
+    </div>
+
+<footer class="am_footer">
+    <div class="am_footer_con">
+        <div class="am_footer_link">
+            <span>关于大猿</span>
+            <ul>
+                <li><a href="###">关于我们</a></li>
+                <li><a href="###">发展历程</a></li>
+                <li><a href="###">友情链接</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="am_info_line">Copyright(c)2015 <span>大猿</span> All Rights Reserved </div>
+</footer>
+<script>
+    $(function(){
+        if ($(window).width() < 600 ) {
+            $('.am_list_item_text').each(
+                function(){
+                    if($(this).text().length >= 26){
+                        $(this).html($(this).text().substr(0,26)+'...');
+                    }});}[]
+
+    });
+
+</script>
+</body>
+</div>
+
+<script src="/js/app/getUrlParam.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/app/info.js"></script>
+</html>

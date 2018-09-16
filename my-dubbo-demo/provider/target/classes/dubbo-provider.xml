@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--应用名，在控制台可以看到-->
+    <dubbo:application name="dubbo-provider"/>
+
+    <!--注册中心-->
+    <dubbo:registry address="zookeeper://182.61.20.11:2181" />
+
+    <!--rpc协议-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+
+
+
+    <!--声明一个bean-->
+    <bean id="movieService" class="com.dayuan.provider.impl.MovieServiceImpl"/>
+
+    <!--暴露一个服务-->
+    <dubbo:service interface="com.dayuan.api.MovieService" ref="movieService"/>
+
+
+    <!--声明一个orderservice的bean-->
+    <bean id="orderService" class="com.dayuan.provider.impl.OrderServiceImpl"/>
+
+    <!--暴露服务垃圾dubbo配置那么麻烦-->
+    <dubbo:service interface="com.dayuan.api.OrderService" ref="orderService"/>
+
+
+</beans>
