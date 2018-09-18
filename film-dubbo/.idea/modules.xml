@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/film-dubbo.iml" filepath="$PROJECT_DIR$/film-dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movieService/movieService.iml" filepath="$PROJECT_DIR$/movieService/movieService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderService/orderService.iml" filepath="$PROJECT_DIR$/orderService/orderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showDayService/showDayService.iml" filepath="$PROJECT_DIR$/showDayService/showDayService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showTimeService/showTimeService.iml" filepath="$PROJECT_DIR$/showTimeService/showTimeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userService/userService.iml" filepath="$PROJECT_DIR$/userService/userService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+    </modules>
+  </component>
+</project>

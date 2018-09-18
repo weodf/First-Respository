@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="showTimeService:war">
+    <output-path>$PROJECT_DIR$/showTimeService/target</output-path>
+    <root id="archive" name="showTimeService-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="showTimeService:war exploded" />
+    </root>
+  </artifact>
+</component>

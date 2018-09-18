@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="movieService" />
+        <module name="orderService" />
+        <module name="showDayService" />
+        <module name="showTimeService" />
+        <module name="userService" />
+        <module name="web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="film-dubbo" target="1.8" />
+      <module name="movieService" target="1.8" />
+      <module name="orderService" target="1.8" />
+      <module name="showDayService" target="1.8" />
+      <module name="showTimeService" target="1.8" />
+      <module name="userService" target="1.8" />
+      <module name="web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
